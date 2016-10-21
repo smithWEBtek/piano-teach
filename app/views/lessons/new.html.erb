@@ -1,0 +1,10 @@
+<h1>Lesson#new</h1> 
+
+<%= form_for @lesson do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+  <%= f.label "Content" %>
+  <%= f.text_area :content %>
+  <%= f.collection_check_boxes :mp3_ids, Mp3.all, :id, :title %>
+  <%= f.submit %>
+<% end %>

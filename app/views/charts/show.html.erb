@@ -1,0 +1,4 @@
+<h1>Chart#show</h1>  
+  Title:      <%= @chart.title %><br>
+  MP3 Title:  <%= "#{Mp3.find(@chart.mp3_id).title}" %><br>
+  MP3 Link:   <%= link_to "#{@chart.file_location}/""#{Mp3.find(@chart.mp3_id).title}" %> 

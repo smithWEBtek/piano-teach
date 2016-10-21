@@ -1,0 +1,12 @@
+<h1>Mp3#index</h1> 
+<% @mp3s.each do |mp3| %>
+  Title: <%= link_to mp3.title, mp3 %><br> 
+
+<% end %>
+
+<h1>Here are the tunes in my iTunes folder: </h1>
+
+<% @itunes.each do |itune| %>
+<%= itune %><br>
+
+<% end %>

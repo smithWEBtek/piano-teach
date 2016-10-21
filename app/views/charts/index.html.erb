@@ -1,0 +1,5 @@
+<h1>Charts#Index</h1>
+<%=  Dir.glob(Rails.root + '/Users/BradSmith/Dropbox/___0_Gig/1_BradsSoloBook/*.pdf') do |file| %> 
+  <%= link_to file.gsub("/Users/BradSmith/Dropbox/___0_Gig/1_BradsSoloBook/", "") %><br> 
+   
+<% end %>

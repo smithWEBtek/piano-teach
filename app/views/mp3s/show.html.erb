@@ -1,0 +1,13 @@
+<h1>Tune: <%= @mp3.title %></h1>
+Chart ID: <%= @mp3.chart_id %><br>
+File Location: <%= @mp3.file_location %><br>
+Link to YouTube video: <%= link_to "youtube", @mp3.youtubelink %>
+
+
+<h2>Lessons using this Tune: </h2>
+<% @mp3.lessons.each do |lesson| %>
+<%= link_to lesson.title, lesson_path(lesson) %><br>
+
+
+
+<% end %>

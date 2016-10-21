@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PianoTeach</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<%= link_to "Tracks", tracks_path %> ___ 
+<%= link_to "Lessons", lessons_path %> ___
+<%= link_to "MP3s", mp3s_path %> ___
+<%= link_to "Charts", charts_path %> ___<br>
+<%= link_to "New Track", new_track_path %> ___ 
+<%= link_to "New Lesson", new_lesson_path %> ___
+<%= link_to "New MP3", new_mp3_path %> ___
+<%= link_to "New Chart", new_chart_path %> ___<br>
+
+<body>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<h1><%= @lesson.title %></h1></p>
+<p>Content: <%= @lesson.content %></p>
+
+<p><h3>Related MP3s:</h3> 
+<% @mp3s.each do |mp3| %>
+<%= link_to mp3.title, mp3_path(mp3) %><br></p>
+
+<% end %>

@@ -1,10 +1,10 @@
 <h1>Track#new</h1>
 
 <%= form_for @track do |f| %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %><br>
   <%= f.label "Content" %>
-  <%= f.text_area :content %>
-  <%= f.collection_check_boxes :lesson_ids, Lesson.all, :id, :name %>
+  <%= f.text_area :content %><br>
+  <%= f.collection_check_boxes :lesson_ids, Lesson.all, :id, :title %><br>
   <%= f.submit %>
 <% end %>

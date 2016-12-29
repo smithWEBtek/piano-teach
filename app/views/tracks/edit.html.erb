@@ -1,2 +1,15 @@
-<h1>Track#edit</h1>
-<p>Find me in app/views/track/edit.html.erb</p>
+<h1>Edit Track: <%= @track.name %></h1>
+
+ 
+<%= form_for @track do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <%= f.label "Content" %>
+  <%= f.text_area :content %><br>
+
+  <%= f.collection_check_boxes :lesson_ids, Lesson.all, :id, :title %><br>
+  <%= f.fields_for :lessons, @track.lessons.build do |lessons_fields| %>
+    <%= lessons_fields.text_field :title %><br>
+    <% end %>
+  <%= f.submit %>
+<% end %>

@@ -1,7 +1,9 @@
-<h1>Track: <%= @track.name %></h1>
-<h2>Content: <%= @track.content %><h2><br>
+<h3>Track Name: <%= @track.name %></h3>
+<h3>Content: <%= @track.content %><h3>
 
-<h2>Lessons in this Track: </h2>
-<% @track.track_lessons.each do |tl| %>
-<%= link_to tl.name lesson_path(lesson) %>
+<h3>Lessons in this Track: </h3>
+  <% @track.lessons.each do |lesson| %>
+    <%= link_to lesson.title, lesson_path %><br>
 <% end %>
+
+<h4><%= link_to "Edit this Track", edit_track_path(@track) %></h4>

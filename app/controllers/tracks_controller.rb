@@ -1,5 +1,5 @@
+require 'pry'
 class TracksController < ApplicationController
-
 
   def index
     @tracks = Track.all
@@ -7,10 +7,6 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
-    @track_lessons = []
-    @track.track_lessons.each do |tl|
-      @track_lessons << Lesson.find_by(track_id: tl.lesson_id)
-    end
   end
 
   def new
@@ -25,9 +21,16 @@ class TracksController < ApplicationController
   end
 
   def edit
+    @track = Track.find(params[:id])
   end
 
   def update
+    @track = Track.find_by(name: params[:track][:name])
+    @track.update(track_params) 
+ 
+    if @track.save
+      redirect_to track_path(@track.id)
+    end
   end
 
   def destroy
@@ -36,7 +39,7 @@ class TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:name, :content, lessons:[])
+    params.require(:track).permit(:name, :content, lesson_ids:[], lessons_attributes: [:name])
   end
 
 end

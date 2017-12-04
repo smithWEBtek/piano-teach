@@ -1,4 +1,4 @@
-class ExcersizesController < ApplicationController
+class ExercisesController < ApplicationController
   
   def index
   end
